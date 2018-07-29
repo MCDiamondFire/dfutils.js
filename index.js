@@ -95,7 +95,7 @@ function selectObject(options, ...items) {
         Name: "SELECT_OBJECT"
     };
 
-    if (options.subfilter) Object.defineProperty(data, "SubFunction", { value: options.subfilter });
+    if (options.subfilter) data.SubFunction = options.subfilter;
 
     json.CodeData.push(data);
 }

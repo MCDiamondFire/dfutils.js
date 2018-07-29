@@ -1,5 +1,3 @@
-const utf8 = require("utf8");
-
 class Text {
     constructor(value) {
         this.Count = 1;
