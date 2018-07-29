@@ -100,6 +100,21 @@ function selectObject(options, ...items) {
     json.CodeData.push(data);
 }
 
+function callFunction(name) {
+    json.CodeData.push({
+        DynamicFunction: name,
+        Name: "CALL_FUNCTION"
+    })
+}
+
+function createFunction(name, item) {
+    json.CodeData.push({
+        ChestItems: [item],
+        DynamicFunction: name,
+        Name: "FUNCTION"
+    });
+}
+
 function setAuthor(name) {
     json.Author = name;
 }
@@ -121,6 +136,8 @@ exports.Entity = Entity;
 exports.Game = Game;
 
 exports.selectObject = selectObject;
+exports.callFunction = callFunction;
+exports.createFunction = createFunction;
 
 exports.setAuthor = setAuthor;
 exports.compile = compile;
