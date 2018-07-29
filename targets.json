@@ -1,0 +1,27 @@
+{
+    "players": [
+        "Selection",
+        "Default",
+        "Random",
+        "All",
+        "Killer",
+        "Damager",
+        "Shooter",
+        "Victim"
+    ],
+        "entities":  [
+            "Selection",
+            "Default",
+            "Killer",
+            "Victim",
+            "Damager",
+            "Shooter",
+            "Projectile",
+            "Name",
+            "EntityName",
+            "Random",
+            "All",
+            "AllEntities",
+            "LastSpawned"
+        ]
+}
