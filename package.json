@@ -4,10 +4,10 @@
   "description": "A JavaScript library to create DiamondFire plots",
   "main": "index.js",
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "utf8": "^3.0.0",
+    "fs": "0.0.1-security",
     "os": "^0.1.1",
-    "snekfetch": "^4.0.4"
+    "snekfetch": "^4.0.4",
+    "utf8": "^3.0.0"
   },
   "devDependencies": {},
   "scripts": {
