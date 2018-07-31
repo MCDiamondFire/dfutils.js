@@ -6,7 +6,7 @@ class Var {
             HideFlags: 63,
             display: {
                 Lore: save ? ["SAVE"] : [],
-                Name: `&c${value}`
+                Name: value
             },
             Damage: 0
         }
