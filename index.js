@@ -1592,6 +1592,8 @@ class Game {
         if (potionEffects) items = items.concat(potionEffects);
 
         if (armor && armor.length >= 1) {
+            if (armor.length < 4) armor = armor.fill({}, armor.length);
+
             const emptySlots = (27 - armor.length) - items.length;
             items.fill({}, emptySlots - 1);
         }
