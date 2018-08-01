@@ -2131,12 +2131,12 @@ class Game {
 function selectObject(options, ...items) {
     const data = {
         Function: options.filter,
-        ConditionalNot: options.not ? 1 : 0,
         ChestItems: items,
         Name: "SELECT_OBJECT"
     };
 
     if (options.subfilter) data.SubFunction = options.subfilter;
+    if (options.not) data.ConditionalNot = 1;
 
     push(data);
 }
