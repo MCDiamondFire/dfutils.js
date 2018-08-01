@@ -48,24 +48,6 @@ function addSpacer() {
     eval(path.replace(/\.CodeData\[\d+\]+$/, "").replace(/\[\d+\]+$/, "")).push("SPACER");
 }
 
-function delSpacers() {
-    let cd = json.CodeData;
-    let path = `json.CodeData[${cd.length - 1}]`;
-
-    for (let i = 0; i < 10; i++) {
-        if (cd.length === 0) break;
-        
-        const filtered = cd.filter(entry => entry !== "SPACER");
-        if (filtered.length != cd.length) eval(`${path.replace(/\[\d+\]+$/, "")} = filtered;`);
-        
-        if (cd[cd.length - 1].CodeData) {
-            cd = cd[cd.length - 1].CodeData;
-            if (cd.length === 0) break;
-            path += `.CodeData[${cd.length - 1}]`;
-        } else break;
-    }
-}
-
 class Player {
     on(event, fn) {
         push({
@@ -2259,24 +2241,21 @@ function setAuthor(name) {
     json.Author = name;
 }
 
-function compile(name = "compiled.dfcode", directory = __dirname) {
+function compile(name = "compiled.dfcode", directory) {
     const start = Date.now();
 
-    console.log("Deleting spacers...");
-    delSpacers();
-
     console.log("Writing file...");
-    writeFile(directory + "\\program.json", JSON.stringify(json), (err) => {
+    writeFile(directory + "\\program.json", JSON.stringify(json).replace(/,"SPACER"/g, "").replace(/"SPACER",/g, ""), (err) => {
         if (err) throw err;
 
         console.log("Converting JSON to NBT...");
-        exec(`java -jar converter.jar ${directory}`, (err, stdout, stderr) => {
+        exec(`java -jar converter.jar ${directory} ${name}`, { cwd: __dirname }, (err, stdout, stderr) => {
             if (err) throw err;
             if (stderr) throw stderr;
 
             unlinkSync(directory + "\\program.json");
 
-            console.log(`Conversion completed in ${Date.now() - start}ms. You can find your code in the NBT.dfcode file.`);
+            console.log(`Conversion completed in ${Date.now() - start}ms. You can find your code in the ${name} file.`);
         });
     });
 }
