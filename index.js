@@ -9,7 +9,7 @@ const PotionEffectItem = require("./structures/PotionEffect");
 const SoundEffectItem = require("./structures/SoundEffect");
 const SpawnEggItem = require("./structures/SpawnEgg");
 const TextItem = require("./structures/Text");
-const ValueItem = require("./structues/Value");
+const ValueItem = require("./structures/Value");
 const VarItem = require("./structures/Var");
 
 const targets = require("./targets.json");
@@ -2259,7 +2259,7 @@ function setAuthor(name) {
     json.Author = name;
 }
 
-function compile(directory) {
+function compile(name = "compiled.dfcode", directory = __dirname) {
     const start = Date.now();
 
     console.log("Deleting spacers...");
