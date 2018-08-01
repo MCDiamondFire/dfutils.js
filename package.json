@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RedstoneDaedalus/dfutils.js.git"
+    "url": "git+https://github.com/MCDiamondFire/dfutils.js.git"
   },
   "keywords": [
     "diamondfire"
@@ -20,7 +20,7 @@
   "author": "RedstoneDaedalus",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RedstoneDaedalus/dfutils.js/issues"
+    "url": "https://github.com/MCDiamondFire/dfutils.js/issues"
   },
-  "homepage": "https://github.com/RedstoneDaedalus/dfutils.js#readme"
+  "homepage": "https://github.com/MCDiamondFire/dfutils.js#readme"
 }
