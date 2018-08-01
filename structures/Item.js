@@ -11,16 +11,22 @@ class Item {
         this.damage = 0
     }
 
-    setAmounth(count) {
+    setAmount(count) {
         this.Count = count;
+
+        return this;
     }
 
     setTag(tag) {
         this.tag = tag;
+
+        return this;
     }
 
     setDamage(damage) {
-        this.Damage = Damage;
+        this.Damage = damage;
+
+        return this;
     }
 }
 
