@@ -82,6 +82,10 @@ class Player {
         return this;
     }
 
+    _reset() {
+        this.target = null;
+    }
+
     give(...items) {
         push(this.target ? {
             Function: "GiveItems",
@@ -93,6 +97,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setItems(...items) {
@@ -106,6 +112,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setArmor(...items) {
@@ -119,6 +127,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setOffhand(...items) {
@@ -132,6 +142,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     removeItems(...items) {
@@ -145,6 +157,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     clearInv(...items) {
@@ -158,6 +172,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     showChestMenu(...items) {
@@ -171,6 +187,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     expandChestMenu(...items) {
@@ -184,6 +202,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     savePlayerInv(...items) {
@@ -197,6 +217,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     loadSavedInv(...items) {
@@ -210,6 +232,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setHotbarSlot(...items) {
@@ -223,6 +247,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     giveRandomItem(...items) {
@@ -236,6 +262,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     closeMenus(...items) {
@@ -249,6 +277,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     sendMessage(...items) {
@@ -262,6 +292,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     sendDialogue(...items) {
@@ -275,6 +307,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     sendMsgWithHover(...items) {
@@ -288,6 +322,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     clearChat(...items) {
@@ -301,6 +337,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     playSound(...items) {
@@ -314,6 +352,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     playSoundSequence(...items) {
@@ -327,6 +367,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     stopAllSounds(...items) {
@@ -340,6 +382,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     playParticleEffect(...items) {
@@ -353,6 +397,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     sendTitle(...items) {
@@ -366,6 +412,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setChatTag(...items) {
@@ -379,6 +427,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     addBossBar(...items) {
@@ -392,6 +442,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     clearBossBars(...items) {
@@ -405,6 +457,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     sendActionBar(...items) {
@@ -418,6 +472,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setChatColor(...items) {
@@ -431,6 +487,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     teleport(...items) {
@@ -444,6 +502,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     randomTeleport(...items) {
@@ -457,6 +517,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     tpSequence(...items) {
@@ -470,6 +532,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     launchUp(...items) {
@@ -483,6 +547,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     launchForward(...items) {
@@ -496,6 +562,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     launchToward(...items) {
@@ -509,6 +577,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     ride(...items) {
@@ -522,6 +592,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     damage(...items) {
@@ -535,6 +607,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     heal(...items) {
@@ -548,6 +622,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     giveEffect(...items) {
@@ -561,6 +637,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     removeEffect(...items) {
@@ -574,6 +652,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     clearEffects(...items) {
@@ -587,6 +667,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setXPLevel(...items) {
@@ -600,6 +682,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setXPProg(...items) {
@@ -613,6 +697,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
     
     setHungerBar(...items) {
@@ -626,6 +712,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setSaturation(...items) {
@@ -639,6 +727,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setMaxHealth(...items) {
@@ -652,6 +742,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setAttackSpeed(...items) {
@@ -665,6 +757,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setOnFire(...items) {
@@ -678,6 +772,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
     
     setFlightSpeed(...items) {
@@ -691,6 +787,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setWalkSpeed(...items) {
@@ -704,6 +802,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     launchProjectile(...items) {
@@ -717,6 +817,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     removeArrows(...items) {
@@ -730,6 +832,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     mobDisguise(...items) {
@@ -743,6 +847,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     playerDisguise(...items) {
@@ -756,6 +862,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     blockDisguise(...items) {
@@ -769,6 +877,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     undisguise(...items) {
@@ -782,6 +892,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     hideOwnDisguise(...items) {
@@ -795,6 +907,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     enablePVP(...items) {
@@ -808,6 +922,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     disablePVP(...items) {
@@ -821,6 +937,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setTime(...items) {
@@ -834,6 +952,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     enableFlight(...items) {
@@ -847,6 +967,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     disableFlight(...items) {
@@ -860,6 +982,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     enableBlockDropping(...items) {
@@ -873,6 +997,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     disableBlockDropping(...items) {
@@ -886,6 +1012,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     enableKeepInventory(...items) {
@@ -899,6 +1027,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     disableKeepInv(...items) {
@@ -912,6 +1042,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setWeatherClear(...items) {
@@ -925,6 +1057,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
     
     setWeatherRain(...items) {
@@ -938,6 +1072,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     enableProjCollisions(...items) {
@@ -951,6 +1087,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     disableProjCollisions(...items) {
@@ -964,6 +1102,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
     
     enableNaturalRegen(...items) {
@@ -977,6 +1117,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     disableNaturalRegen(...items) {
@@ -990,6 +1132,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     enableBlockPlacing(...items) {
@@ -1003,6 +1147,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     disableBlockPlacing(...items) {
@@ -1016,6 +1162,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     enableDeathDrops(...items) {
@@ -1029,6 +1177,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     disableDeathDrops(...items) {
@@ -1042,6 +1192,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     setGamemode(gamemode) {
@@ -1056,6 +1208,8 @@ class Player {
             Function: gm,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     rollbackBlocks(...items) {
@@ -1069,6 +1223,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     respawn(...items) {
@@ -1082,6 +1238,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     kick(...items) {
@@ -1095,6 +1253,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 
     rewardCredits(...items) {
@@ -1108,6 +1268,8 @@ class Player {
             ChestItems: items,
             Name: "PLAYER_ACTION"
         });
+
+        this._reset();
     }
 }
 
@@ -1125,6 +1287,10 @@ class Entity {
         this.target = targets.entities.includes(target) ? target : null;
     }
 
+    _reset() {
+        this.target = null;
+    }
+
     setArmor(...items) {
         push(this.target ? {
             Function: "SetArmor",
@@ -1136,6 +1302,8 @@ class Entity {
             ChestItems: items,
             Name: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     launchProjectile(...items) {
@@ -1149,6 +1317,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     teleport(...items) {
@@ -1162,6 +1332,8 @@ class Entity {
             ChestItems: items,
             Name: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     tpSequence(...items) {
@@ -1175,6 +1347,8 @@ class Entity {
             ChestItems: items,
             Name: "ENTITY_EVENT"
         });
+
+        this._reset();
     }
 
     remove(...items) {
@@ -1188,6 +1362,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     setName(...items) {
@@ -1201,6 +1377,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     hideName(...items) {
@@ -1214,6 +1392,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     showName(...items) {
@@ -1227,6 +1407,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     damage(...items) {
@@ -1240,6 +1422,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     heal(...items) {
@@ -1253,6 +1437,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     giveEffect(...items) {
@@ -1266,6 +1452,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     removeName(...items) {
@@ -1279,6 +1467,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     launchUp(...items) {
@@ -1292,6 +1482,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     launchForward(...items) {
@@ -1305,6 +1497,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     launchToward(...items) {
@@ -1318,6 +1512,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     mobDisguise(...items) {
@@ -1331,6 +1527,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     playerDisguise(...items) {
@@ -1344,6 +1542,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     blockDisguise(...items) {
@@ -1357,6 +1557,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     undisguise(...items) {
@@ -1370,6 +1572,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     enableDrops(...items) {
@@ -1383,6 +1587,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     disableDrops(...items) {
@@ -1396,6 +1602,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     setMaxHealth(...items) {
@@ -1409,6 +1617,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     enableProjCollisions(...items) {
@@ -1422,6 +1632,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     disableProjCollisions(...items) {
@@ -1435,6 +1647,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     enableAI(...items) {
@@ -1448,6 +1662,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     disableAI(...items) {
@@ -1461,6 +1677,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     setFire(...items) {
@@ -1474,6 +1692,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     setAge(...items) {
@@ -1487,6 +1707,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     silence(...items) {
@@ -1500,6 +1722,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     unsilence(...items) {
@@ -1513,6 +1737,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     enableGravity(...items) {
@@ -1526,6 +1752,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     disableGravity(...items) {
@@ -1539,6 +1767,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     setTarget(...items) {
@@ -1552,6 +1782,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     ride(...items) {
@@ -1565,6 +1797,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 
     moveTo(...items) {
@@ -1578,6 +1812,8 @@ class Entity {
             ChestItems: items,
             NAME: "ENTITY_ACTION"
         });
+
+        this._reset();
     }
 }
 
