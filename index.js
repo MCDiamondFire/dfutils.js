@@ -14,7 +14,7 @@ const VarItem = require("./structures/Var");
 
 const targets = require("./targets.json");
 
-const json = { CodeData: [] };
+let json = { CodeData: [] };
 
 function push(data) {
     let cd = json.CodeData;
@@ -2242,20 +2242,30 @@ function setAuthor(name) {
 }
 
 function compile(name = "compiled.dfcode", directory) {
-    const start = Date.now();
+    return new Promise((resolve, reject) => {
+        console.log(`Compiling ${name.replace(".dfcode", "")}...`);
+        const start = Date.now();
 
-    console.log("Writing file...");
-    writeFile(directory + "\\program.json", JSON.stringify(json).replace(/,"SPACER"/g, "").replace(/"SPACER",/g, ""), (err) => {
-        if (err) throw err;
+        console.log("Writing file...");
+        writeFile(directory + "\\program.json", JSON.stringify(json).replace(/,"SPACER"/g, "").replace(/"SPACER",/g, ""), (err) => {
+            if (err) return reject(err);
 
-        console.log("Converting JSON to NBT...");
-        exec(`java -jar converter.jar ${directory} ${name}`, { cwd: __dirname }, (err, stdout, stderr) => {
-            if (err) throw err;
-            if (stderr) throw stderr;
+            console.log("Converting JSON to NBT...");
+            exec(`java -jar converter.jar ${directory} ${name}`, { cwd: __dirname }, (err, stdout, stderr) => {
+                if (err) return reject(err);
+                if (stderr) return reject(stderr);
 
-            unlinkSync(directory + "\\program.json");
+                try {
+                    unlinkSync(directory + "\\program.json");
+                } catch (e) {
+                    return null;
+                }
 
-            console.log(`Conversion completed in ${Date.now() - start}ms. You can find your code in the ${name} file.`);
+                console.log(`Conversion completed in ${Date.now() - start}ms. You can find your code in the ${name} file.`);
+
+                json = { CodeData: [] };
+                return resolve();
+            }); 
         });
     });
 }
