@@ -11,6 +11,10 @@ class Location {
         }
         this.Damage = 0;
     }
+
+    setTarget(target) {
+        this.tag.display.Lore.unshift(target);
+    }
 }
 
 module.exports = Location;
