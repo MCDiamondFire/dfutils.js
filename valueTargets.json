@@ -1,0 +1,14 @@
+{
+    "selection": "&aCurrent Selection",
+    "player": "&aDefault Player",
+    "entity": "&cDefault Entity",
+    "random": "&eRandom Player",
+    "randomMob": "&eRandom Mob",
+    "randomEntity": "&eRandom Entity",
+    "lastMob": "&eLast-Spawned Mob",
+    "damager": "&cDamager",
+    "killer": "&cKiller",
+    "shooter": "&eShooter",
+    "victim": "&9Victim",
+    "projectile": "&bProjectile"
+}
