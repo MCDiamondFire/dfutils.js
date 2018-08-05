@@ -2292,13 +2292,13 @@ exports.closeStatement = addSpacer;
 exports.setAuthor = setAuthor;
 exports.compile = compile;
 
-exports.Item = Item;
-exports.Location = LocationItem;
-exports.Number = NumberItem;
-exports.ParticleEffect = ParticleEffectItem
-exports.PotionEffect = PotionEffectItem;
-exports.SoundEffect = SoundEffectItem;
-exports.SpawnEgg = SpawnEggItem;
-exports.Text = TextItem;
-exports.Value = ValueItem;
-exports.Var = VarItem;
+exports.Item = (id) => new Item(id);
+exports.Location = (...coords) => new LocationItem(...coords);
+exports.Number = (number) => new NumberItem(number);
+exports.ParticleEffect = (effect) => new ParticleEffectItem(effect);
+exports.PotionEffect = (effect) => new PotionEffectItem(effect);
+exports.SoundEffect = (effect) => new SoundEffectItem(effect);
+exports.SpawnEgg = (entity) => new SpawnEggItem(entity);
+exports.Text = (text) => new TextItem(text);
+exports.Value = (value) => new ValueItem(value);
+exports.Var = (variable) => new VarItem(variable);
