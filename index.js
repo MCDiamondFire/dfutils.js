@@ -1,5 +1,5 @@
-const { writeFile, unlinkSync } = require("fs");
-const { exec } = require("child_process");
+const { writeFileSync, unlinkSync } = require("fs");
+const { execSync } = require("child_process");
 
 const Item = require("./structures/Item");
 const LocationItem = require("./structures/Location");
@@ -2242,32 +2242,25 @@ function setAuthor(name) {
 }
 
 function compile(name = "compiled.dfcode", directory) {
-    return new Promise((resolve, reject) => {
-        console.log(`Compiling ${name.replace(".dfcode", "")}...`);
-        const start = Date.now();
+    console.log(`Compiling ${name.replace(".dfcode", "")}...`);
+    const start = Date.now();
 
-        console.log("Writing file...");
-        writeFile(directory + "\\program.json", JSON.stringify(json).replace(/,"SPACER"/g, "").replace(/"SPACER",/g, ""), (err) => {
-            if (err) return reject(err);
+    console.log("Writing file...");
+    writeFileSync(directory + "\\program.json", JSON.stringify(json).replace(/,"SPACER"/g, "").replace(/"SPACER",/g, ""));
 
-            console.log("Converting JSON to NBT...");
-            exec(`java -jar converter.jar ${directory} ${name}`, { cwd: __dirname }, (err, stdout, stderr) => {
-                if (err) return reject(err);
-                if (stderr) return reject(stderr);
 
-                try {
-                    unlinkSync(directory + "\\program.json");
-                } catch (e) {
-                    return null;
-                }
+        console.log("Converting JSON to NBT...");
+        execSync(`java -jar converter.jar ${directory} ${name}`, { cwd: __dirname });
 
-                console.log(`Conversion completed in ${Date.now() - start}ms. You can find your code in the ${name} file.`);
+        try {
+            unlinkSync(directory + "\\program.json");
+        } catch (e) {
+            return;
+        }
 
-                json = { CodeData: [] };
-                return resolve();
-            }); 
-        });
-    });
+        console.log(`Conversion completed in ${Date.now() - start}ms. You can find your code in the ${name} file.`);
+
+        json = { CodeData: [] };
 }
 
 exports.Player = Player;
