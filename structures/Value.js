@@ -1,5 +1,5 @@
-const values = require("../values");
-const targets = require("../valueTargets");
+const values = require("../data/values");
+const targets = require("../dat/valueTargets");
 
 class Value {
     constructor(name) {

@@ -1,4 +1,4 @@
-{
+module.exports = {
     "selection": "&aCurrent Selection",
     "player": "&aDefault Player",
     "entity": "&cDefault Entity",

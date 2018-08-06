@@ -1,4 +1,4 @@
-{
+module.exports = {
     "health": "&dCurrent Health",
     "maxHealth": "&aMaximum Health",
     "food": "&eCurrent Food Level",
