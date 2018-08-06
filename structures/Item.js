@@ -2,11 +2,11 @@ const items = require("../data/items");
 
 class Item {
     constructor(id) {
-        const { type } = items.find(item => item.type === id || item.text_type === id);
-        if (!type) throw new Error("Unknown item.");
+        const data = items.find(item => item.type === id || item.text_type === id);
+        if (!data) throw new Error("Unknown item.");
 
         this.Count = 1;
-        this.id = type;
+        this.id = data.type;
         this.tag = { };
         this.damage = 0
     }
