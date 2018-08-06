@@ -1,4 +1,4 @@
-const { writeFileSync, unlinkSync } = require("fs");
+const { writeFile, unlinkSync } = require("fs");
 const { execSync } = require("child_process");
 
 const Item = require("./structures/Item");
@@ -2141,19 +2141,33 @@ function selectObject(options, ...items) {
     push(data);
 }
 
-function callFunction(name) {
+function callFunction(name, parameters = { }) {
+    const keys = Object.keys(parameters);
+    const values = Object.values(parameters);
+
+    for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        const value = values[i];
+
+        setVar("=", new VarItem(`%param ${key}`), value);
+    }
+
     push({
         DynamicFunction: name,
         Name: "CALL_FUNCTION"
     })
-}
+};
 
-function createFunction(name, item) {
+function createFunction(name, icon) {
     push({
-        ChestItems: [item],
+        ChestItems: icon ? [icon] : [],
         DynamicFunction: name,
         Name: "FUNCTION"
     });
+}
+
+function param(name) {
+    return new VarItem(`%param ${name}`);
 }
 
 function loop(ticks) {
@@ -2242,25 +2256,28 @@ function setAuthor(name) {
 }
 
 function compile(name = "compiled.dfcode", directory) {
-    console.log(`Compiling ${name.replace(".dfcode", "")}...`);
+    console.log(`Compiling ${name}...`);
     const start = Date.now();
 
-    console.log("Writing file...");
-    writeFileSync(directory + "\\program.json", JSON.stringify(json).replace(/,"SPACER"/g, "").replace(/"SPACER",/g, ""));
+    return new Promise((resolve, reject) => {
+        console.log(`Writing file...`);
+        writeFile(directory + "\\program.json", JSON.stringify(json).replace(/,"SPACER"/g, "").replace(/"SPACER",/g, ""), err => {
+            if (err) return reject(err);
+            console.log("Converting JSON to NBT...");
+            execSync(`java -jar converter.jar ${directory} ${name}`, { cwd: __dirname });
 
+            try {
+                unlinkSync(directory + "\\program.json");
+            } catch (e) {
+                return;
+            }
 
-        console.log("Converting JSON to NBT...");
-        execSync(`java -jar converter.jar ${directory} ${name}`, { cwd: __dirname });
+            console.log(`Conversion completed in ${Date.now() - start}ms. You can find your code in the ${name} file.`);
 
-        try {
-            unlinkSync(directory + "\\program.json");
-        } catch (e) {
-            return;
-        }
-
-        console.log(`Conversion completed in ${Date.now() - start}ms. You can find your code in the ${name} file.`);
-
-        json = { CodeData: [] };
+            json = { CodeData: [] };
+            resolve();
+        });
+    });
 }
 
 exports.Player = Player;
@@ -2281,6 +2298,7 @@ exports.else = elseBlock;
 exports.repeat = repeat;
 
 exports.closeStatement = addSpacer;
+exports.param = param;
 
 exports.setAuthor = setAuthor;
 exports.compile = compile;
