@@ -1,7 +1,7 @@
 class Location {
     constructor(...coords) {
         this.Count = 1;
-        this.id = 339;
+        this.id = "minecraft:paper";
         this.tag = {
             HideFlags: 63,
             display: {

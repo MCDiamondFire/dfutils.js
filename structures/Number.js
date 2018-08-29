@@ -1,7 +1,7 @@
 class Number {
     constructor(number) {
         this.Count = 1;
-        this.id = 341;
+        this.id = "minecraft:slime_ball";
         this.tag = {
             HideFlags: 63,
             display: {

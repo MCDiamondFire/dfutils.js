@@ -4,7 +4,7 @@ const targets = require("../data/valueTargets");
 class Value {
     constructor(name) {
         this.Count = 1;
-        this.id = 260;
+        this.id = "minecraft:apple";
         this.tag = {
             HideFlags: 63,
             display: {

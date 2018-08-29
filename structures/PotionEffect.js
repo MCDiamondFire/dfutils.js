@@ -1,7 +1,7 @@
 class PotionEffect {
     constructor(effect, duration, potency) {
         this.Count = 1;
-        this.id = 374;
+        this.id = "minecraft:glass_bottle";
         this.tag = {
             HideFlags: 63,
             display: {

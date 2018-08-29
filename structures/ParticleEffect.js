@@ -1,11 +1,13 @@
+const particles = require("../data/particles");
+
 class ParticleEffect {
     constructor(effect) {
         this.Count = 1;
-        this.id = 399;
+        this.id = "minecraft:nether_star";
         this.tag = {
             HideFlags: 63,
             display: {
-                Lore: [`&7${effect}`],
+                Lore: [particles[effect]],
                 Name: "&eParticle Effect"
             }
         }

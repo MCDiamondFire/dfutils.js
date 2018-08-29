@@ -1,7 +1,7 @@
 class Var {
     constructor(value, save = false) {
         this.Count = 1;
-        this.id = 378;
+        this.id = "minecraft:magma_cream";
         this.tag = {
             HideFlags: 63,
             display: {

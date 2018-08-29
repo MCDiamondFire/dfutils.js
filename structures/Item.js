@@ -6,7 +6,7 @@ class Item {
         if (!data) throw new Error("Unknown item.");
 
         this.Count = 1;
-        this.id = data.type;
+        this.id = data.text_type;
         this.tag = { };
         this.damage = 0
     }

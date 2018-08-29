@@ -1,7 +1,7 @@
 class SoundEffect {
     constructor(effect) {
         this.Count = 1;
-        this.id = 2257;
+        this.id = "minecraft:record_cat";
         this.tag = {
             HideFlags: 63,
             display: {
